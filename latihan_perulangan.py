@@ -1,8 +1,11 @@
 # latihan looping
 sisi = int(input("masukkan sisi segitiga : "))
+<<<<<<< HEAD
 if sisi % 2 != 1:
     print("Masukkan angka ganjil.")
     exit()
+=======
+>>>>>>> 8104393cf97a94a4e1b9b6f50930a46c145c065f
 
 # menggunakan for
 # variabel dummy
@@ -20,8 +23,13 @@ while True:
     count += 1
     if count > sisi:
         break
+<<<<<<< HEAD
 # menggunakan segitiga sama sisi 
 print("\nsegitiga sama sisi\n")
+=======
+# menggunakan segitiga ganjil 
+print("\nsegitiga ganjil\n")
+>>>>>>> 8104393cf97a94a4e1b9b6f50930a46c145c065f
 count = 1
 spasi = int(sisi/2)
 while True:
@@ -31,7 +39,11 @@ while True:
         spasi -= 1
         count += 1
     else:   
+<<<<<<< HEAD
         # kembali keatas jika genap 
+=======
+        # kembali keatas jika ganjil 
+>>>>>>> 8104393cf97a94a4e1b9b6f50930a46c145c065f
         count += 1
         continue
     # break jika count melebihi sisi
@@ -40,6 +52,7 @@ while True:
     
 # segitiga sama kaki
 
+<<<<<<< HEAD
 # tugas buat belah ketupat
 
 print("\nbelah ketupat\n")
@@ -51,3 +64,6 @@ spasi = 1  # Kembalikan spasi ke 1 untuk bagian bawah belah ketupat
 for i in range(sisi - 2, 0, -2):  # Melangkah mundur 2 untuk membuat pola ganjil
     print(" " * spasi + "*" * i)
     spasi += 1
+=======
+# tugas buat belah ketupat
+>>>>>>> 8104393cf97a94a4e1b9b6f50930a46c145c065f
