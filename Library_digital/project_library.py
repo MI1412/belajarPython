@@ -19,7 +19,7 @@ if __name__ == '__main__':
             match user_option:
                 case 1: CRUD.read_console()
                 case 2: 
-                    print('ini Create Data')
+                    CRUD.create_console()
                 case 3: 
                     print('ini Update Data')
                 case 4: 
