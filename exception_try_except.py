@@ -41,11 +41,11 @@ from math import nan
 # print("\nend program 1")    
 
 # # 2. 
-# try:
+# try: # mencoba syntax di bawah ini
 #     with open('data_4.txt','r') as file:
-#         print(file.read())
+#         print(file.read()) # aslinya ini itu eror karena tidak ada filenya
 
-# except:
+# except: # except dalam bhs inggris artinya kecuali dari percobaan diatas  akan dibuat pesan eror dan menjalankan solusi dari eror
 #     print("filenya ga ada, mau buat baru ")
 #     with open('data_4.txt','w',encoding='utf-8') as file:
 #         file.write('ini file baru')
@@ -55,7 +55,7 @@ from math import nan
 # contoh membuat exception
 from numbers import Number
 def tambah(a,b):
-    if not isinstance(a,Number) or not isinstance(b,Number):
+    if not isinstance(a,Number) or not isinstance(b,Number):   # membuat validasi
         raise "input harus angka"
     return a+b
 print(tambah(9,8))
