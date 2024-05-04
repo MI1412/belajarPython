@@ -13,7 +13,7 @@ if __name__ == '__main__':
         CRUD.init_console()
         
         while(True):    
-            print(f'1. Read Data \n2. Create Data \n3. Update Data \n4. Delete Data \n')
+            print(f'\n1. Read Data \n2. Create Data \n3. Update Data \n4. Delete Data \n')
             user_option = int(input('masukkan opsi : '))
             
             match user_option:
@@ -21,12 +21,12 @@ if __name__ == '__main__':
                 case 2: 
                     CRUD.create_console()
                 case 3: 
-                    print('ini Update Data')
+                    CRUD.update_console()
                 case 4: 
                     print('ini Delete Data')
                 case _:
                     print('tidak ada opsi yang dipilih')
-            is_done = input('\nApakah selesai (Y/N)? : ')
+            is_done = input('\nApakah sudah selesai (Y/N)? : ')
             if is_done == 'y' or is_done == 'Y':
                 break
             

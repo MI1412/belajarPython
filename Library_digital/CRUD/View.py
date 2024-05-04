@@ -2,6 +2,73 @@
 from . import Operasi
 from . import Database
 
+# mengupdate data
+def update_console():
+    read_console()
+    while(True): 
+        no_buku = int(input('pilih no buku yang ingin diupdate : '))
+        
+        # mengambil index no_buku
+        data_buku = Operasi.read(index = no_buku)
+        
+        if data_buku:
+            break
+        else:
+            print('buku tidak ditemukan coba lagi ')
+    # memformat data_buku
+    data_break = data_buku.split(',')        
+    pk = data_break[0]
+    date_add = data_break[1]
+    penulis = data_break[2]
+    judul = data_break[3]
+    tahun = data_break[4][:-1]
+    
+    # input data yang dirubah
+    while(True):
+        print('\n'+'='*100+'\nsilahkan ubah data yang anda inginkan')
+        print(f'1. Penulis\t: {penulis:.40}')
+        print(f'2. Judul\t: {judul:.40}')
+        print(f'3. Tahun\t: {tahun:4}')
+        print(100*'-')
+        
+        user_option = int(input('pilih data yang ingin diubah (1,2,3) : '))
+        
+        match user_option:
+            case 1:
+                penulis = input('Penulis\t: ')
+            case 2:
+                judul = input('Judul\t: ')
+            case 3:
+                while(True):
+                    try:
+                        tahun = int(input('Tahun\t: '))
+                        panjang_tahun = len(str(tahun))
+                        if panjang_tahun == 4 and panjang_tahun == 4 :
+                            break
+                        
+                        else:
+                            print(f'tahun yang anda masukkan {panjang_tahun} digit angka , seharusnya ada 4 digit angka (yyyy)')
+                            
+                    except:
+                        print('tahun harus angka, masukkan angka lagi')    
+            case _:
+                print('tidak ada opsi yang dipilih masukkan lagi') 
+                
+        # view data baru
+        print('\n'+'='*100+'\nData Berhasil Diupdate')
+        print(f'1. Penulis\t: {penulis:.40}')
+        print(f'2. Judul\t: {judul:.40}')
+        print(f'3. Tahun\t: {tahun:4}')
+        print(100*'-')
+        
+        is_done = input('Apakah sudah selesai update data (Y/N) ? ')        
+        
+        
+        if is_done == 'y':
+            break
+    Operasi.update(no_buku,pk,date_add,tahun,judul,penulis)    
+
+
 
 # membuat file
 def create_console():
@@ -38,6 +105,7 @@ def read_console():
     # judul
     print(f'{index:4} | {judul:40} | {penulis:40} | {tahun:4}')
     print('-'*100)
+    
     # data
     for index,data in enumerate(data_file):
         data_break = data.split(',')
