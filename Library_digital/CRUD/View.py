@@ -2,6 +2,43 @@
 from . import Operasi
 from . import Database
 
+def delete_console():
+    read_console()
+    while(True): 
+        print('silahkan pilih data yang ingin dihapus ')
+        no_buku = int(input('No buku : '))
+        # mengambil index no_buku
+        data_buku = Operasi.read(index = no_buku)
+        
+        if data_buku:
+            # memformat data_buku
+            data_break = data_buku.split(',')        
+            pk = data_break[0]
+            date_add = data_break[1]
+            penulis = data_break[2]
+            judul = data_break[3]
+            tahun = data_break[4][:-1]
+        
+            # data yang dihapus 
+            print('\n'+'='*100+f'\n Data no buku {no_buku} ini akan dihapus ')
+            print(f'1. Penulis\t: {penulis:.40}')
+            print(f'2. Judul\t: {judul:.40}')
+            print(f'3. Tahun\t: {tahun:4}')
+            print(100*'-')
+            
+            is_done = input(f'Yakin data buku {no_buku} ingin dihapus (Y/N) ? ') 
+            
+            if is_done == 'y' or is_done == 'Y':
+                Operasi.delete(no_buku)
+                break            
+        else:
+            print('buku tidak ditemukan coba lagi ')
+            
+            
+    print('\nData berhasil dihapus !')        
+
+
+
 # mengupdate data
 def update_console():
     read_console()
@@ -18,7 +55,7 @@ def update_console():
     # memformat data_buku
     data_break = data_buku.split(',')        
     pk = data_break[0]
-    date_add = data_break[1]
+    data_add = data_break[1]
     penulis = data_break[2]
     judul = data_break[3]
     tahun = data_break[4][:-1]
@@ -66,7 +103,7 @@ def update_console():
         
         if is_done == 'y':
             break
-    Operasi.update(no_buku,pk,date_add,tahun,judul,penulis)    
+    Operasi.update(no_buku,pk,data_add,tahun,judul,penulis)    
 
 
 
@@ -80,7 +117,7 @@ def create_console():
         try:
             tahun = int(input('Tahun\t: '))
             panjang_tahun = len(str(tahun))
-            data = Database.TEMPLATE.copy
+            data = Database.TEMPLATE.copy()
             if panjang_tahun == 4 and panjang_tahun == 4 :
                 break
             
@@ -110,7 +147,7 @@ def read_console():
     for index,data in enumerate(data_file):
         data_break = data.split(',')
         pk = data_break[0]
-        date_add = data_break[1]
+        data_add = data_break[1]
         penulis = data_break[2]
         judul = data_break[3]
         tahun = data_break[4]

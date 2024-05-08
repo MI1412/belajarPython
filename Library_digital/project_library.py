@@ -23,7 +23,7 @@ if __name__ == '__main__':
                 case 3: 
                     CRUD.update_console()
                 case 4: 
-                    print('ini Delete Data')
+                    CRUD.delete_console()
                 case _:
                     print('tidak ada opsi yang dipilih')
             is_done = input('\nApakah sudah selesai (Y/N)? : ')
