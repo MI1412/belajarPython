@@ -55,7 +55,7 @@ def update_console():
     # memformat data_buku
     data_break = data_buku.split(',')        
     pk = data_break[0]
-    data_add = data_break[1]
+    Date_add = data_break[1]
     penulis = data_break[2]
     judul = data_break[3]
     tahun = data_break[4][:-1]
@@ -82,7 +82,6 @@ def update_console():
                         panjang_tahun = len(str(tahun))
                         if panjang_tahun == 4 and panjang_tahun == 4 :
                             break
-                        
                         else:
                             print(f'tahun yang anda masukkan {panjang_tahun} digit angka , seharusnya ada 4 digit angka (yyyy)')
                             
@@ -103,7 +102,7 @@ def update_console():
         
         if is_done == 'y':
             break
-    Operasi.update(no_buku,pk,data_add,tahun,judul,penulis)    
+    Operasi.update(no_buku,pk,Date_add,tahun,judul,penulis)    
 
 
 
@@ -147,7 +146,7 @@ def read_console():
     for index,data in enumerate(data_file):
         data_break = data.split(',')
         pk = data_break[0]
-        data_add = data_break[1]
+        Date_add = data_break[1]
         penulis = data_break[2]
         judul = data_break[3]
         tahun = data_break[4]
