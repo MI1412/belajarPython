@@ -6,7 +6,7 @@ class Siswa:
         Siswa.__jumlah += 1
 
     # jika mencoba buat getter maka sama saja eror
-    # method ini hanya berlaku untuk objek 
+    # method ini hanya berlaku untuk objek biasa
     def getJumlah(self):
         return Siswa.__jumlah 
     
