@@ -9,7 +9,7 @@ print ("tipe data integer : ", tipeInteger, "tipe data : ", type(tipeInteger))
 tipeFloat = 1.8
 print ("tipe data float : ", tipeFloat, "tipe data : " , type(tipeFloat))
 # tipe data khusus complex
-dataKomplex = complex(5,6)
+dataKomplex = -5j
 print("tipe data complex : ", dataKomplex, "tipe data : ", type(dataKomplex))
 # tipe data dari bahasa C
 from ctypes import c_double
