@@ -12,3 +12,11 @@ tuple_2 = ('a','b','c','d')
 zipped = zip(tuple_1,tuple_2)
 result = tuple(zipped)
 print(tuple(result))
+
+# cara membuat docstring, digunakan untuk menampilkan dokumentasi ketika memakai method help
+def info(input):
+    '''ini akan menampilkan info mengenai docstring'''
+    return f'ini adalah {input}'
+
+print(info('tes'))
+help(info)
