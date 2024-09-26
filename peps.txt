@@ -1,0 +1,48 @@
+PEP (Python Enhancement Proposal) adalah dokumen yang digunakan untuk mengusulkan perubahan atau penambahan fitur dalam bahasa pemrograman Python. PEP mendokumentasikan proposal teknis dan ide yang dapat mempengaruhi pengembangan Python. Berikut adalah penjelasan lebih rinci tentang PEP:
+
+### Apa Itu PEP?
+
+1. **Definisi PEP:**
+   - **PEP (Python Enhancement Proposal)** adalah dokumen yang menjelaskan fitur baru, perubahan, atau perbaikan dalam bahasa Python. Setiap PEP berisi deskripsi rinci dari proposal, alasan di balik perubahan, dan dampaknya terhadap Python.
+
+2. **Fungsi PEP:**
+   - PEP berfungsi sebagai alat komunikasi untuk komunitas Python, memungkinkan pengembang dan pemangku kepentingan lainnya untuk menyampaikan ide, mendiskusikan detail teknis, dan mencapai konsensus sebelum melakukan perubahan pada bahasa atau pustaka standar Python.
+
+3. **Jenis PEP:**
+   - **PEP 0:** Daftar semua PEP yang telah diterima atau dalam proses.
+   - **PEP 8:** Panduan gaya kode Python.
+   - **PEP 20:** Zen of Python, prinsip desain Python.
+   - **PEP 484:** Type Hints, penambahan anotasi tipe untuk Python.
+   - **PEP 333:** Standard untuk WSGI (Web Server Gateway Interface).
+
+4. **Proses Penerimaan:**
+   - **Usulan:** Penulis PEP mengajukan proposal dengan detail teknis dan justifikasi.
+   - **Diskusi:** Komunitas Python dan pengembang lain berdiskusi tentang proposal tersebut.
+   - **Review:** PEP ditinjau oleh pemelihara Python atau komite khusus.
+   - **Keputusan:** Jika disetujui, proposal diterima dan diimplementasikan dalam versi Python berikutnya.
+
+### Contoh PEP
+
+1. **PEP 8 - Style Guide for Python Code:**
+   - Mengatur konvensi gaya penulisan kode Python, seperti penamaan variabel, indentasi, dan panjang baris. 
+   - **Contoh:** "Gunakan 4 spasi untuk indentasi."
+
+2. **PEP 20 - The Zen of Python:**
+   - Kumpulan prinsip desain Python yang memandu pengembangan Python. 
+   - **Contoh:** "Simple is better than complex."
+
+3. **PEP 484 - Type Hints:**
+   - Menambahkan anotasi tipe untuk membantu dokumentasi dan pengecekan tipe statis dalam Python.
+   - **Contoh:** 
+     ```python
+     def greet(name: str) -> str:
+         return 'Hello, ' + name
+     ```
+
+4. **PEP 333 - Python Web Server Gateway Interface (WSGI):**
+   - Standar untuk komunikasi antara server web dan aplikasi web Python.
+   - **Contoh:** Desain antarmuka antara server dan aplikasi Python yang memungkinkan integrasi yang konsisten.
+
+### Kesimpulan
+
+PEP adalah mekanisme penting dalam pengembangan Python yang memungkinkan pengajuan, diskusi, dan penerimaan perubahan dalam bahasa. PEP memberikan cara sistematis untuk memperkenalkan fitur baru dan memastikan bahwa perubahan dilakukan secara transparan dan terorganisir.

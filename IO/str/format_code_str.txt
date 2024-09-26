@@ -1,0 +1,134 @@
+Dalam **f-string**, Anda dapat menggunakan berbagai format kode untuk mengontrol bagaimana nilai dievaluasi dan ditampilkan. Berikut adalah beberapa macam format yang umum digunakan:
+
+### 1. **Penggunaan `:` untuk Format Umum**
+Setelah tanda titik dua `:`, Anda bisa menentukan berbagai format yang mengontrol lebar, perataan, dan lainnya.
+
+#### a. **Lebar Minimum Karakter**
+Menentukan lebar minimum untuk tampilan nilai, berguna untuk penyusunan kolom.
+```python
+>>> name = 'Alice'
+>>> print(f'{name:10}')  # Menampilkan setidaknya 10 karakter
+Alice     
+```
+
+#### b. **Pengaturan Lebar dan Penambahan Nol**
+Anda bisa mengisi spasi kosong dengan angka nol `0`.
+```python
+>>> num = 42
+>>> print(f'{num:05}')  # Tambah nol di depan hingga 5 karakter
+00042
+```
+
+#### c. **Pembulatan Angka**
+Untuk bilangan desimal, Anda bisa membulatkan hingga beberapa tempat desimal dengan `:.nf`, di mana `n` adalah jumlah angka di belakang koma.
+```python
+>>> pi = 3.1415926535
+>>> print(f'{pi:.2f}')  # Membulatkan hingga 2 angka desimal
+3.14
+```
+
+### 2. **Perataan Teks**
+- **Kiri (`<`)**: Meratakan teks ke kiri.
+- **Kanan (`>`)**: Meratakan teks ke kanan.
+- **Tengah (`^`)**: Meratakan teks di tengah.
+
+Contoh:
+```python
+>>> text = 'Hello'
+>>> print(f'{text:<10}')  # Meratakan ke kiri, lebar 10 karakter
+Hello     
+>>> print(f'{text:>10}')  # Meratakan ke kanan, lebar 10 karakter
+     Hello
+>>> print(f'{text:^10}')  # Meratakan ke tengah, lebar 10 karakter
+  Hello   
+```
+
+### 3. **Pemformatan Angka**
+Anda bisa menggunakan format khusus untuk angka:
+
+#### a. **Bilangan Bulat (`d`)**
+Menampilkan angka dalam format bilangan bulat.
+```python
+>>> number = 123
+>>> print(f'{number:d}')
+123
+```
+
+#### b. **Bilangan Biner (`b`), Oktal (`o`), dan Heksadesimal (`x`, `X`)**
+Menampilkan angka dalam format biner, oktal, atau heksadesimal.
+```python
+>>> number = 255
+>>> print(f'{number:b}')  # Biner
+11111111
+>>> print(f'{number:o}')  # Oktal
+377
+>>> print(f'{number:x}')  # Heksadesimal (huruf kecil)
+ff
+>>> print(f'{number:X}')  # Heksadesimal (huruf besar)
+FF
+```
+
+#### c. **Notasi Ilmiah (`e`, `E`)**
+Menampilkan angka dalam notasi ilmiah.
+```python
+>>> num = 123456
+>>> print(f'{num:e}')  # Huruf kecil
+1.234560e+05
+>>> print(f'{num:E}')  # Huruf besar
+1.234560E+05
+```
+
+### 4. **Modifikator String**
+Anda juga bisa menggunakan modifikator khusus seperti `!a`, `!s`, atau `!r` untuk mengonversi objek sebelum diformat.
+- **`!a`**: Menggunakan fungsi `ascii()`
+- **`!s`**: Menggunakan fungsi `str()`
+- **`!r`**: Menggunakan fungsi `repr()`
+
+Contoh:
+```python
+>>> animals = 'eels'
+>>> print(f'{animals!r}')  # Menggunakan repr()
+'eels'
+>>> print(f'{animals!s}')  # Menggunakan str()
+eels
+```
+
+### 5. **Specifier `=` untuk Self-Documenting**
+Specifier `=` menampilkan ekspresi, tanda sama dengan, dan hasil evaluasinya.
+```python
+>>> count = 10
+>>> print(f'{count=}')
+count=10
+```
+
+### 6. **Separator Ribuan (`,`)**
+Anda dapat memisahkan ribuan dalam angka menggunakan tanda koma `,`.
+```python
+>>> large_number = 1000000
+>>> print(f'{large_number:,}')
+1,000,000
+```
+
+### 7. **Menambahkan Tanda (`+`) atau Ruang Kosong (` `) pada Bilangan Positif**
+- **`+`**: Menambahkan tanda plus (+) pada angka positif.
+- **` `**: Menambahkan ruang kosong di depan angka positif.
+```python
+>>> num = 42
+>>> print(f'{num:+}')  # Menampilkan +42
++42
+>>> print(f'{num: }')  # Menampilkan  42 (spasi di depan angka positif)
+ 42
+```
+
+### Contoh Penggunaan Lengkap:
+```python
+>>> name = "John"
+>>> age = 30
+>>> pi = 3.14159
+>>> large_num = 1000000
+
+>>> print(f'Name: {name:<10} | Age: {age:>3} | Pi: {pi:.2f} | Number: {large_num:,}')
+Name: John       | Age:  30 | Pi: 3.14 | Number: 1,000,000
+```
+
+F-string sangat fleksibel dan memungkinkan Anda mengatur tampilan output dengan format yang lebih mudah dipahami dan lebih ringkas dibanding metode lain seperti `format()`.
