@@ -1,0 +1,26 @@
+SOLID adalah akronim untuk lima prinsip desain dalam pemrograman berorientasi objek (OOP) yang bertujuan untuk meningkatkan keterbacaan, fleksibilitas, dan pemeliharaan kode. Berikut adalah penjelasan singkat tentang setiap prinsip:
+
+### 1. **Single Responsibility Principle (SRP)**
+Setiap kelas harus memiliki satu tanggung jawab atau alasan untuk berubah. Dengan demikian, jika ada perubahan pada satu tanggung jawab, tidak akan memengaruhi kelas lain.
+
+### 2. **Open/Closed Principle (OCP)**
+Kelas harus terbuka untuk ekstensi tetapi tertutup untuk modifikasi. Ini berarti Anda dapat menambahkan fungsionalitas baru tanpa mengubah kode yang sudah ada, biasanya melalui pewarisan atau penggunaan antarmuka.
+
+### 3. **Liskov Substitution Principle (LSP)**
+Objek dari kelas turunan harus dapat menggantikan objek dari kelas induk tanpa mengubah perilaku yang diharapkan dari program. Ini memastikan bahwa kelas turunan dapat digunakan di tempat kelas induk tanpa menyebabkan kesalahan.
+
+### 4. **Interface Segregation Principle (ISP)**
+Klien tidak seharusnya dipaksa untuk bergantung pada antarmuka yang tidak mereka gunakan. Dengan membagi antarmuka besar menjadi beberapa antarmuka kecil, Anda dapat memastikan bahwa kelas hanya terhubung dengan fungsionalitas yang relevan.
+
+### 5. **Dependency Inversion Principle (DIP)**
+Kelas harus bergantung pada abstraksi, bukan pada implementasi. Ini berarti bahwa alih-alih kelas bergantung pada kelas konkret, mereka harus bergantung pada antarmuka atau kelas abstrak. Dengan cara ini, Anda dapat mengubah implementasi tanpa memengaruhi kode yang bergantung padanya.
+
+Tujuan
+SRP: Memudahkan pemeliharaan dan mengurangi kompleksitas.
+OCP: Memungkinkan ekspansi tanpa modifikasi yang berisiko.
+LSP: Memastikan konsistensi dan integritas kelas.
+ISP: Mengurangi ketergantungan dan meningkatkan modularitas.
+DIP: Meningkatkan fleksibilitas dan mengurangi ketergantungan antar modul.
+
+### Kesimpulan
+Dengan menerapkan prinsip SOLID, Anda dapat membangun sistem perangkat lunak yang lebih modular, terstruktur, dan mudah dipelihara, yang pada akhirnya meningkatkan kualitas dan efisiensi pengembangan perangkat lunak.
