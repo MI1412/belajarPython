@@ -1,0 +1,4 @@
+digunakan untuk menginstall pkg di venv = python -m pip install <pkg>
+uninstall pkg = pip uninstall <pkg>
+lihat list = pip list
+venv = source nama_env/Scripts/activate

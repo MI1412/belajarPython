@@ -1,0 +1,13 @@
+### Terjemahan
+
+Aplikasi Python sering kali menggunakan paket dan modul yang tidak termasuk dalam pustaka standar. Aplikasi mungkin memerlukan versi tertentu dari sebuah pustaka, karena aplikasi tersebut mungkin memerlukan perbaikan bug tertentu atau ditulis menggunakan versi antarmuka pustaka yang sudah usang.
+
+Hal ini berarti satu instalasi Python mungkin tidak dapat memenuhi persyaratan setiap aplikasi. Jika aplikasi A memerlukan versi 1.0 dari modul tertentu, tetapi aplikasi B memerlukan versi 2.0, maka persyaratan tersebut bertentangan, dan menginstal salah satu versi 1.0 atau 2.0 akan membuat salah satu aplikasi tidak dapat dijalankan.
+
+Solusi untuk masalah ini adalah dengan membuat lingkungan virtual, yaitu pohon direktori mandiri yang berisi instalasi Python untuk versi Python tertentu, ditambah sejumlah paket tambahan.
+
+Aplikasi yang berbeda kemudian dapat menggunakan lingkungan virtual yang berbeda. Untuk menyelesaikan contoh sebelumnya mengenai persyaratan yang bertentangan, aplikasi A dapat memiliki lingkungan virtual sendiri dengan versi 1.0 yang terinstal, sementara aplikasi B memiliki lingkungan virtual lain dengan versi 2.0. Jika aplikasi B memerlukan perpustakaan diupgrade ke versi 3.0, ini tidak akan mempengaruhi lingkungan aplikasi A.
+
+### Kesimpulan
+
+Penggunaan lingkungan virtual di Python sangat penting untuk mengatasi konflik versi pustaka yang dibutuhkan oleh aplikasi yang berbeda. Dengan menciptakan lingkungan virtual, masing-masing aplikasi dapat memiliki pengaturan dan pustaka yang terpisah, memastikan bahwa perubahan pada satu lingkungan tidak memengaruhi lingkungan lainnya. Ini memungkinkan pengembang untuk mengelola dependensi dengan lebih efektif dan menghindari masalah yang disebabkan oleh konflik versi.

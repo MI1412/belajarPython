@@ -1,0 +1,6 @@
+
+untuk membuat venv / virtual environmen, gunakan perintah ini:
+python -m venv tutorial-env
+
+running venv:
+source tutorial-env\Scripts\activate
