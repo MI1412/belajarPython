@@ -1,5 +1,6 @@
 from flask import (Flask, render_template, request, make_response, session, redirect, url_for, flash, abort)
 from werkzeug.utils import secure_filename
+from markupsafe import escape
 
 # init
 app = Flask(__name__)
@@ -8,14 +9,22 @@ app.secret_key = "hai"
 # halaman error
 @app.errorhandler(401)
 def page_not_found(e):
-    return render_template('401.html'), 401
+    return render_template('error_page/401.html'), 401
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error_page/401.html'), 404
 
 @app.errorhandler(405)
 def page_not_method(e):
-    return render_template('405.html'), 405
+    return render_template('error_page/405.html'), 405
+
+@app.errorhandler(500)
+def page_not_method(e):
+    return render_template('error_page/500.html'), 500
 
 # upload gambar
-ALLOWED_EXTENSION = {'png','jpeg','jpg','svg'}
+ALLOWED_EXTENSION = {'png','jpeg','jpg','svg','jfif'}
 # wadah file upload
 app.config['UPLOAD_FOLDER'] = 'files/'
 
@@ -48,11 +57,33 @@ def upload_file():
     return render_template('upload.html')
 
 
-# routing url
-@app.route('/id/<int:blog_id>')
+# aturan variabel
+
+# 1. int
+@app.route('/id/<int:angka>')
 # response
-def show_blog(blog_id): # %d untuk integer
-    return "halo kamu ada di blog %d"% blog_id
+def angka(angka): # %d untuk integer
+    return f"angka yang diambil dari url: {escape(angka)}"
+
+# 2. string
+@app.route('/nama/<nama>')
+def tampilkan_nama(nama):
+    return f"nama yang diambil dari url {escape(nama)}"
+
+# 3. float
+@app.route('/float/<float:float>')
+def tampilkan_float(float):
+    return f"angka float yang diambil url {escape(float)}"
+
+# 4. path
+@app.route('/path/<path:subpath>')
+def show_path(subpath):
+    return f"path yang diambil dari url :{escape(subpath)}"
+    
+# 5. uuid
+@app.route('/uuid/<uuid:uuid>')
+def show_uuid(uuid):
+    return f"uuid yang diambil dari url : {escape(uuid)}"
 
 # index
 @app.route('/')
@@ -105,12 +136,12 @@ def login():
 # !! fitur cookie dimatikan karena belajar flash message
 
 # mengambil set cookie dan menampilkannya
-# @app.route("/getcookie")
-# def getCookie():
-#     password = request.cookies.get("password_user")
-#     username = request.cookies.get("username_user")
-#     email = request.cookies.get("email_user")
-#     return f"BIO Cookie <br><br>username: {username}<br>password: {password}<br>email: {email}"
+@app.route("/getcookie")
+def getCookie():
+    password = request.cookies.get("password_user")
+    username = request.cookies.get("username_user")
+    email = request.cookies.get("email_user")
+    return f"BIO Cookie <br><br>username: {username}<br>password: {password}<br>email: {email}"
 
 # ruter logout
 @app.route("/logout")

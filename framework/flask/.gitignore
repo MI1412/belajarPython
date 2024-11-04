@@ -4,6 +4,8 @@ Lib/
 Include/
 Scripts/
 
+
+.env
 # File cache Python
 __pycache__/
 *.py[cod]
