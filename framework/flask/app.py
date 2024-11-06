@@ -89,9 +89,10 @@ def show_uuid(uuid):
 @app.route('/')
 def index():
     # ini mengambil get dalam bentuk dict
+    title = 'flask library'
     search = request.args.get("search")
     id = request.args.get("id")
-    return render_template("index.html", search=search,id=id)
+    return render_template("index.html", search=search,id=id, title=title)
 
 @app.route('/user/<username>/<email>/<password>')
 def show_user(username,email,password):
