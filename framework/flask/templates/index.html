@@ -21,16 +21,10 @@
     <h3>id: {{id}} </h3>
     {%endif%}
 
-    <!-- untuk membuat web lebih dinamis -->
-    <!-- {%extends %} -->
-
     
 
     <br>
     <a href="{{url_for('upload_file')}}">upload file</a>
-    <hr>
-    {%block content%}
-    {%endblock%}
     <!-- mengambil link berdasarkan fungsi bukan berdasarkan route -->
     <a href="{{url_for('login')}}">login</a>
     <a href="{{url_for('show_user',username='admin',email='admin123@gmail.com',password='hai')}}">admin</a>
